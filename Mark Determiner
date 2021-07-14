@@ -1,0 +1,33 @@
+var gradecalc = {
+    didipassit: function (grade, final, minpassgrade, finalmark) {
+        let weightmark = (100 - final) / 100;
+        let weightfinal = final / 100;
+        let passdeterminer = (weightmark * grade) + (weightfinal * finalmark);
+        console.log('FINAL MARK: ' + passdeterminer);
+        if (passdeterminer >= minpassgrade) {
+            console.log('CONGRATS! You passed.');
+        } else {
+            console.log('You failed the exam.');
+        }
+    },
+    whatdoineedtopass: function (grade, final, minpassgrade) {
+        let weightmark = (100 - final) / 100;
+        let weightfinal = final / 100;
+        let markuneed = ((minpassgrade - (grade * weightmark)) / weightfinal);
+        if (markuneed > 100) {
+            console.log('You would need a ' + markuneed + ' to pass this class.');
+            console.log('You have failed.');
+        } else if (markuneed < 0) {
+            console.log('You would need a ' + markuneed + ' to fail this class.')
+            console.log('You have passed.');
+        } else {
+            console.log('You need a ' + markuneed + ' to pass the class.');
+        }
+    },
+};
+
+console.log('');
+gradecalc.didipassit(20, 30, 50, 40);
+console.log('---------------------------');
+gradecalc.whatdoineedtopass(-10, 30, 40);
+console.log('');
