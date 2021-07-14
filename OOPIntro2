@@ -1,0 +1,36 @@
+//ABSTRACTION
+// - Hide details, show essentials
+
+function Circle(radius) {
+    this.radius = radius;
+    let defaultlocation = {
+        x: 0,
+        y: 0,
+    };
+    this.getdefaultlocation = function() {
+        return defaultlocation; //RETURNS INFRORMATION TO BE USED IN PROGRAM
+    }
+    let computeroptimumlocation = function (factor) {
+        // ...
+    }
+    this.draw = function() {
+        let x, y;
+        computeroptimumlocation(0,1);
+        console.log('Draw');
+    };
+    Object.defineProperty(this, 'defaultlocation', {
+        get: function() {
+            return defaultlocation;
+// Use defineProperty to define setters and getters
+        },
+        set: function(value) {
+            if (!value.x || !value.y)
+                throw new Error('Invalid Location');
+            defaultlocation = value;
+        }
+    });
+}
+
+const circle = new Circle(10);
+circle.draw(); //ONLY SHOWS 'THIS METHOD'
+circle.defaultlocation
