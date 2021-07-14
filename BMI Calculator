@@ -1,0 +1,57 @@
+//BODY MASS INDEX CALCULATOR
+//USE WEIGHT AND LENGTH
+//CONVERT KG TO POUNDS
+/*Then, calculate BMI by dividing weight in pounds (lb) 
+by height in inches (in) squared and multiplying by a 
+conversion factor of 703. When using a handheld calculator, 
+if your calculator has a square function, 
+divide weight (lb) by height (in) squared, 
+multiply by 703, and round to one decimal place.*/
+
+function blankline() {
+    console.log('');
+}
+
+function divider() {
+    console.log('------------------------------------');
+}
+
+function intro() {
+    console.log('WELCOME TO THE PROGRAM');
+    console.log('THIS IS A BODY MASS INDEX CALCULATOR');
+    console.log('')
+    console.log('BMI SCALE:')
+    console.log('Underweight:')
+    console.log('18.5 (Increased)')
+    console.log('')
+    console.log('Normal weight:')
+    console.log('18.5 - 24.9 (Least)')
+    console.log('')
+    console.log('Overweight:')
+    console.log('25.0 - 29.9 (Increased)')
+    console.log('')
+    console.log('Obese:')
+    console.log('Class 1: 30-34.9 (High)')
+    console.log('Class 2: 35 - 39.9 (Very high)')
+    console.log('Class 3: >= 40 (Extremely high)')
+}
+
+function getbmi(weight, height) {
+    console.log('Your weight: ' + weight + ' lbs');
+    console.log('Your height: ' + height + ' in');
+    let bmi = ((703 * weight) / (Math.pow(height, 2)));
+    let roundedbmi = Math.round(bmi, 2);
+    console.log('Your BMI is: ' + roundedbmi);
+}
+
+divider();
+blankline();
+intro();
+blankline();
+divider();
+blankline();
+let weight = 192;
+let height = 67;
+getbmi(weight, height);
+blankline();
+divider();
