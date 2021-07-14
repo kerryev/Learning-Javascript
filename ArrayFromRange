@@ -1,0 +1,10 @@
+const numbers = arrayfromrange(-10, 24);
+
+function arrayfromrange(min, max) {
+    const output = [];
+    for (let i = min; i <= max; i++)
+        output.push(i);
+    return output;
+}
+
+console.log(numbers);
