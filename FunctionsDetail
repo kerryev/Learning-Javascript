@@ -1,0 +1,55 @@
+//FUNCTION SECTION OF CODE WITH MOSH'S JAVASCRIPT TUTORIAL
+
+//FUNCTION DECLARATION VS EXPRESSIONS
+
+//Declaration
+function walk() {
+    console.log('Walk')
+}
+
+//Anonymous Function Expression
+let run = function() {
+    console.log('Run');
+};
+
+let move = run;
+run();
+move();
+
+//ARGUMENTS (REST OPERATOR)
+
+function sum(discount, ...prices) {
+    let total = prices.reduce((a, b) => a + b);
+    return total * (1-discount);
+}
+
+console.log(sum(0.1, 20, 30));
+
+//DEFAULT PARAMETERS
+
+function interest(principal, rate = 3.5, years = 5) {   
+    return principal * rate / 100 * years;
+}
+
+console.log(interest(10000));
+
+//GETTERS AND SETTERS
+
+const person = {
+    firstName: 'Evan',
+    lastName: 'Kerr',
+    get fullName() {
+        return `${person.firstName} ${person.lastName}`
+    },
+    set fullName(value) {
+        const parts = value.split(' ')
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
+
+person.fullName = 'John Smith';
+
+console.log(person);
+
+//TRY AND CATCH
