@@ -1,0 +1,119 @@
+//INTRO TO OBJECT ORIENTED PROGRAMMING (CODE WITH MOSH)
+
+function divider() {
+    console.log('---------------');
+}
+
+// PROCEDURAL IMPLEMENTATION
+//Variables and functions sperated
+
+let basesalary = 30_000;
+let overtime = 10;
+let rate = 20;
+
+function getWage(basesalary, overtime, rate) {
+    var total;
+    total = basesalary + (overtime * rate);
+    console.log(total);
+}
+
+getWage(30_000, 10, 20);
+divider();
+
+// ENCAPSULATION
+
+let employee = {
+    baseSalary: 30_000, //Properties of the object
+    overtime: 10,
+    rate: 20,
+    getWage: function() {
+        var overall;
+        overall = this.baseSalary + (this.overtime * this.rate);
+        console.log(overall)
+    }
+}
+
+employee.getWage();
+divider()
+
+// ABSTRACTION
+// - Simpler interface
+// - Reduce the impact of change
+// - Factors from inside and outside of the cobject
+
+// INHERITANCE
+// - Different objects inherit same properties
+// - The properties are shared
+
+// POLYMORPHISM
+// - Refactor ugly case switch statements
+
+//------------------------------------------------------
+//CREATING OBJECTS (Review)
+
+const circle1 = {
+    radius: 1,
+    location: {
+        x: 1,
+        y: 1,
+    },
+    draw: function() {
+        console.log('Draw');
+    }
+};
+
+//FACTORY FUNCTIONS
+function createCircle(radius) {
+    return {
+        radius: radius,
+        draw: function() {
+            console.log('Draw')
+        }
+    };
+}
+
+const circle = createCircle(1);
+circle.draw();
+divider();
+
+//CONSTRUCTOR FUNCTIONS
+function Circle(radius1) {
+    this.radius1 = radius1;
+    this.draw = function() {
+        console.log('Draw');
+    }
+}
+
+const another = new Circle(1);
+
+console.log(Circle.length);
+console.log(Circle.constructor);
+divider();
+
+// VALUE TYPES: Number, string, boolean, symbol, undefined, null
+// REFERENCE TYPES: Object, function, array
+//- Primitives are copied by their value
+//- Objects are copied by their reference
+
+
+//Primitive Type Example
+let number = 10;
+
+function increase(number) {
+    number++
+}
+
+increase(number); //Copied by value (since number = 10 is a variable)
+console.log(number);
+
+//Object example
+
+let obj = {value: 20};
+
+function increase1(obj) {
+    obj.value++
+}
+
+increase1(obj);
+console.log(obj);
+divider();
