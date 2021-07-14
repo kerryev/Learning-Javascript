@@ -1,0 +1,138 @@
+//CODE WITH MOSH (INTRO TO JAVASCRIPT P1): ARRAYS
+
+const numbers = [3, 4];
+
+numbers.push(5, 6);
+numbers.unshift(1, 2);
+
+console.log(numbers)
+
+//FINDING ELEMENTS (PRIMITIVES)
+
+const numbers1 = [1, 2, 3 ,4 , 3];
+
+console.log(numbers1.indexOf(3)) //INDEXOF
+console.log(numbers1.lastIndexOf(3)) //LASTINDEXOF
+console.log(numbers1.splice(2)) //SPLICE
+console.log('----------------------------------------------------------')
+
+//FINDING ELEMENTS (REFERENCE TYPES)
+
+const courses = [
+    {id: 1, name: 'a'},
+    {id: 2, name: 'Math'},
+    {id: 3, name: 'English'},
+    {id: 4, name: 'Gym'},
+];
+
+/*const course;
+course = courses.find(function(course) {
+    return course.class === 'Science';
+}),*/
+
+//ARROW FUNCTION
+
+/*var find;
+find = courses.find(course => course.name === 'a'),*/
+
+//REMOVING ELEMENTS
+
+const numbers2 = [1, 2, 3, 4, 5, 6,];
+//const last = numbers.pop(); --> REMOVES LAST ELEMENT
+//const first = numbers.shift(); --> REMOVES FIRST ELEMENT
+//console.log(numbers2);
+//console.log(last);
+numbers2.splice(2,2); //removes elements inside of the middle of an array
+console.log(numbers2);
+console.log('------------------------------------------------------')
+
+//EMPTYING AN ARRAY
+
+let arraycool = [1, 2, 3, 4, 5,];
+//arraycool.length = 0;
+console.log(arraycool);
+
+//OR
+
+arraycool.splice(0, arraycool.length);
+console.log(arraycool);
+
+console.log('----------------------')
+
+//COMBINING ARRAYS
+
+const first = [1, 2, 3, 4];
+const second = [5, 6, 7, 8];
+
+const combined = first.concat(second);
+console.log(combined);
+
+//SPREAD OPERATOR
+
+const third = [9, 10, 11, 12]; //More prefered when combining arrays
+const fourth = [13, 14, 15, 16];
+
+const combined1 = [...third, ...fourth];
+console.log(combined1);
+console.log('--------------------------------');
+
+//ITERATING AN ARRAY
+
+const numbers3 = [1, 2, 3, 4];
+
+/*numbers3.forEach(function(number) { //Each elements of the array is passed into function
+    console.log(number);
+});*/
+
+//OR (Same output)
+
+numbers3.forEach(number => console.log(number));
+console.log('---------------')
+
+//TESTING THE ELEMENTS OF AN ARRAY
+
+const numbers4 = [1, -1, 2, 3, 4];
+const atleastonepositive = numbers4.every(function(value2) {
+    return value2 >= 0;
+});
+
+console.log(atleastonepositive);
+
+//-every() condition is true for all number
+//-some() condition is true for some variables
+
+console.log('---------------')
+
+//FILTERING AN ARRAY
+
+const numbers5 = [1,-1, 2, 3, 4];
+/*const filter = numbers5.filter(function(value) {
+    return value >=0;
+});
+
+console.log(filter);*/
+
+//OR (ARROW FUNCTION)
+
+const filtered = numbers5.filter(value => value >= 0 );
+console.log(filtered);
+console.log('---------------------');
+
+//MAPPING AN ARRAY
+
+const numbers6 = [1, -1, 2, 3, 4];
+const filtered1 = numbers6.filter(value => value >= 0 );
+const items = filtered1.map(n => '<li>' + n + '</li>');
+const html = items.join();
+console.log(html);
+console.log('---------------------')
+
+//REDUCING AN ARRAY
+
+const numbers7 = [1, -1, 2, 3];
+
+const sum1 = numbers.reduce(
+    (accumulator, currentvalue) => accumulator + currentvalue
+);
+
+console.log(sum1);
