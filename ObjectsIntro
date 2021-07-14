@@ -1,0 +1,87 @@
+//OBJECTS - INTRODUCTION
+
+var person = {
+    firstName: "Evan",
+    lastName: "Kerr",
+    age: 18,
+    eyeColor: "Blue"
+  };
+var identification = {
+    id: 8348374733,
+    password: 5353,
+    display: function(){
+        console.log('ID: ' + id);
+        console.log('Password: ' + password);
+    },
+  };
+
+//CONSTRUCTOR VS FACTORY OBJECTS
+
+//CONSTRUTOR
+function Circle(radius) { //this
+    this.radius = radius;
+    this.draw = function() {
+        console.log('Draw');
+    }
+}
+const circle = new Circle(1);
+
+//Dynamic nature of objects
+
+const circle1 = {
+    radius: 1,
+};
+
+circle1.colour = 'Yellow'
+circle1.draw = function() {}
+
+delete circle1.colour
+delete circle1.draw
+
+console.log(circle1);
+
+console.log('');
+console.log('-----------------------------------');
+
+//EXERCISE 1: Adress
+
+var adress = {
+    city: 'Toronto', // key: city, street, postalcode
+    street: 'Bruh street',
+    postalcode: '7HD-3JS',
+};
+
+function showadress(adress) {
+    for(let key in adress)
+        console.log(key, adress[key])
+}
+
+showadress(adress);
+
+console.log('=-=-=-=-=-=-=-=-=-=-=-=-')
+
+//EXAMPLE(BLOG POST)
+
+let post = {
+    title: 'My first blog post!',
+    body: 'This is the body of the body!',
+    author: 'Evan K',
+    views: 70,
+    isLive: true,
+    comments: [
+        {author: 'Grace', body: 'Good work!'},
+        {author: 'Tyler', body: 'Well done Evan!'},
+    ],
+};
+
+console.log(post.title)
+
+//PRICE RANGE OBJECT (EXAMPLE)
+
+let priceRange = [
+    { price: '$', tootltip: 'Inexpensive', minperperson: 0, maxperperson: 10},
+    { price: '$$', tootltip: 'Medium', minperperson: 11, maxperperson: 20},
+    { price: '$$$', tootltip: 'Expensive', minperperson: 21, maxperperson: 50},
+];
+
+console.log(priceRange);
